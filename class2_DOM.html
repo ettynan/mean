@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HELP</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <!--putting id on element is easiest way to find it in the DOM-->
+        <input type="text" name="stuff" id="text">
+        <button name = "button" id="button"> Add Item </button>
+        <ul id='melist'>
+        </ul>
+        <script>
+           // console.dir(document);
+           // console.dir(document.getElementById('melist'));
+            var melist = document.getElementById('melist');
+            var button = document.getElementById('button');
+            var startext = document.getElementById('text');
+            // console.dir(button);
+            button.onclick = function(e){ //annonymous function    e=event
+                // how to associate the function with the onclick to add item to list
+                
+                if(startext.value.trim()){ //trim remove blank spaces - is a method so invoke with the parenth
+                    return; //falsey value since trimmed
+                }
+                // console.log('got here');
+                // console.log(startext);
+                // melist.innerHTML += '<li>'+startext.value+'</li>'; //plus equal to keep adding to the list not overwrite
+                melist.innerHTML += `<li> ${ startext.value} </li>`;
+                startext.value = '';
+            }; //semi colon needed for annonymous function
+            //ul wasn't defined until after the script, and this file reads top down - move the list up
+
+        </script>
+        
+    </body>
+</html>

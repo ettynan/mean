@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", function(){
     var game = {
         players:[],
-        addPlayer: function(){}
+        addPlayer: function(){
+            players.push;
+            console.log(player);
+            var player = document.getElementById('button').onclick;
+            console.dir(player);
+            // button.onclick = function(e){
+            player.push;
+            console.log(player);
+        }
     };
     function playerConstructor(name){
         player = {};
