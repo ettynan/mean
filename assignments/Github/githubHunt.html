@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <!--<script src='hunt.js'></script>-->
+    </head>
+    <body>
+        <button>Click</button>
+        <script>
+            $(document).ready(function(){
+                $('button').click(function(){
+                    $.get("https://api.github.com/users/ettynan", displayName)
+                });
+            function displayName(data) {
+                if(data.name){
+                    console.log(data);
+                    $('body').append("<p>"+data.name+"</p>");
+                    }
+                }
+            }
+        );
+        </script>
+    </body>
+</html>
